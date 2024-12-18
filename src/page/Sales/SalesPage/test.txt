@@ -1,0 +1,111 @@
+{
+    accessorKey: "details",
+    header: "Details",
+    Cell: ({ row }: { row: MRT_Row<any> }) => (
+      <Grid container spacing={1} columns={12}>
+        <Grid item xs={12} md={4}>
+          <Box
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={(e) =>
+              handleChange(row.index, "dettype", e.target.innerText)
+            }
+            sx={{
+              height: "24px",
+              textAlign: "center",
+              border: "1px solid #ccc",
+              borderRadius: 4,
+              whiteSpace: "normal",
+            }}
+          >
+            {row.original.dettype ?? ""}
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Box
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={(e) =>
+              handleChange(row.index, "itmcde", e.target.innerText)
+            }
+            sx={{
+              height: "24px",
+              textAlign: "center",
+              border: "1px solid #ccc",
+              borderRadius: 4,
+              whiteSpace: "normal",
+            }}
+          >
+            {row.original.itmcde ?? ""}
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Box
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={(e) =>
+              handleChange(row.index, "itmdsc", e.target.innerText)
+            }
+            sx={{
+              height: "24px",
+              textAlign: "center",
+              border: "1px solid #ccc",
+              borderRadius: 4,
+              whiteSpace: "normal",
+            }}
+          >
+            {row.original.itmdsc ?? ""}
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Select
+            value={row.original.taxcde}
+            onChange={(e) =>
+              handleChange(row.index, "taxcde", e.target.value)
+            }
+            fullWidth
+            sx={{
+              height: "24px",
+              fontSize: 14,
+              whiteSpace: "normal",
+            }}
+          >
+            {vatCodeOptions.map((option) => (
+              <MenuItem key={option} value={option}>
+                {option}
+              </MenuItem>
+            ))}
+          </Select>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <TextField
+            type="text"
+            size="small"
+            value={row.original.itmqty ?? ""}
+            onChange={(e) =>
+              handleitmqty(row.index, "itmqty", e.target.value)
+            }
+            inputProps={{
+              sx: {
+                height: 7,
+                alignContent: "center",
+                fontSize: 14,
+                p: 1,
+              },
+              inputMode: "numeric",
+              pattern: "^[0-9]*.?[0-9]{0,5}$",
+            }}
+            sx={{
+              width: "100%",
+              "& .MuiInputBase-input": {
+                lineHeight: 1.5,
+                whiteSpace: "normal",
+              },
+            }}
+          />
+        </Grid>
+        {/* Add more items here as needed */}
+      </Grid>
+    ),
+    size: 500,
+  },

@@ -1,0 +1,46 @@
+
+
+<grid 1st column>
+docnum - Doc. No. //input text
+empty
+cuscde - inner join customer table //select
+empty
+address - customer table //text only
+empty
+empty
+"" - Ship To //select
+empty
+"" - Prepared By //input text
+</grid>
+
+
+<grid 2nd Column>
+    <grid 2-1 Column>
+    trndte - Trans. Date //date
+    "" - Dr No //input text
+    "" - Ref No //input text
+    Empty
+    "" - EWT Code //select
+    "" - EVAT Code //select
+    "" - Warehouse //select
+    </grid>
+
+    <grid 2-2 Column>
+    user: user //input text
+    Empty
+    "" - Price List //select
+    Empty
+    "" - Salesman //select
+    "" - Terms //select
+    "" - advances //checkbox
+    </grid
+
+    "" - Remarks //input text multiline
+    "" - Checked By //input text
+    "" - Approved By //input text
+    </grid>
+</grid>
+
+
+outside grid
+amtdis - //Text Only
